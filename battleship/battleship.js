@@ -26,4 +26,5 @@ while (isSunk == false){
 	}
 }
 
-var status = "You shot " + shots + "times. Your accuracy level is " + (3/shots*100%)
+var status = "You shot " + shots + "times. Your accuracy level is " + (3/shots*100%);
+alert(status);
