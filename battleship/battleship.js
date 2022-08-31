@@ -1,4 +1,4 @@
-var location1 = Math.floor(Math.random() * 5);
+var location1 = Math.floor(Math.random() * 5) + 1;
 var location2 = location1 + 1;
 var location3 = location2 + 1;
 
@@ -12,8 +12,12 @@ var n = 7;
 var board = new Array(n).fill(0);
 
 while (isSunk == false){
-	shot = prompt("Are you ready for shooting? (Enter a number from 0 to 6):");
-	if (shot < 0 || shot > 6){
+	shot = prompt(
+		"Hey! This is a battleship mini game. Imagine that a 3-deck enemy ship is located at 7 horizontal cells ••••••• (from 1 to 7). Your task is to sink it in fewer attempts. Are you ready for shooting? (Enter a number from 1 to 7):"
+	);
+	if (shot === null)
+		break
+	if (shot < 1 || shot > 7){
 		alert("Incorrect number! Try again");
 	} else if (isNaN(shot)){
 		alert("The entered value is not a number! Try again");
@@ -34,7 +38,9 @@ while (isSunk == false){
 	}
 }
 
-var status = "You shot " + shots + " times. Your accuracy level is " + (3/shots);
-alert(status);
-
-
+if (shot === null)
+	alert('Game is over')
+else {
+	var status = "You shot " + shots + " times. Your accuracy level is " + (3/shots);
+	alert(status);
+}
