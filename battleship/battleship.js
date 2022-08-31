@@ -28,6 +28,7 @@ while (isSunk == false){
 		shots = shots + 1;
 		if (shot == location1 || shot == location2 || shot == location3){
 			hits = hits + 1;
+			alert("Great job! You hit the bull's-eye")
 			if (hits == 3){
 				isSunk = true;
 				alert("You've won! 🎊");
